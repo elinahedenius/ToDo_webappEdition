@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<html>
+<head>
+  <title>ToDo</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link rel='stylesheet' type='text/css' href='css/index.css'>
+  <script
+			  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+			  crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-wrapper">
+      <h6 id='currentViewContainer' class="brand-logo">Today</h6>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a class="btn-flat" class='viewBtn' id='today'>Today</a></li>
+    <li><a class="btn-flat" class='viewBtn' id='week'>The coming week</a></li>
+    <li><a class="btn-flat" class='viewBtn' id='month'>Month</a></li>
+    <li>Lists:</li>
+  </ul>
+
+  <div id='todayView' class='view' style='display:none;'>
+  </div>
+
+  <div id='weekView' class='view' style='display:none;'>
+  </div>
+
+  <div id='monthView' class='view' style='display:none;'>
+  </div>
+
+  <script src='js/ui.js'></script>
+  <script src='js/app.js'></script>
+</body>
+</html>
