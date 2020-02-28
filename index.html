@@ -4,8 +4,12 @@
 <html>
 <head>
   <title>ToDo</title>
+
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#ee6e73">
+
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -17,8 +21,6 @@
 			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
 			  crossorigin="anonymous"></script>
   <link rel='manifest' href='manifest.webmanifest'>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="theme-color" content="#ee6e73">
 </head>
 
 <body>
@@ -37,11 +39,49 @@
   </nav>
 
   <ul class="sidenav" id="mobile-demo">
-    <li><a class="btn-flat" class='viewBtn' id='today'>Today</a></li>
-    <li><a class="btn-flat" class='viewBtn' id='week'>The coming week</a></li>
-    <li><a class="btn-flat" class='viewBtn' id='month'>Month</a></li>
+    <li><a class='viewBtn' class="btn-flat viewBtn" id='today'>Today</a></li>
+    <li><a class='viewBtn' class="btn-flat viewBtn" id='week'>The coming week</a></li>
+    <li><a class='viewBtn' class="btn-flat viewBtn" id='month'>Month</a></li>
     <li>Lists:</li>
   </ul>
+
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red modal-trigger" href='#newList'><i class="material-icons">playlist_add</i></a></li>
+      <li><a class="btn-floating modal-trigger" href="#newTask"><i class="material-icons">check_box</i></a></li>
+    </ul>
+  </div>
+
+  <ul id='addOptions' style='display: none;'>
+    <li><a class="waves-effect waves-light btn modal-trigger" href="#newTask">task</a></li>
+    <li><a class="waves-effect waves-light btn modal-trigger" href="#newList">list</a></li>
+  </ul>
+
+
+  <!-- Modal Structure -->
+<div id="newTask" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>New Task</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
+
+<div id="newList" class="modal modal-fixed-footer">
+  <div class="modal-content">
+    <h4>New List</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>
 
   <div id='todayView' class='view' style='display:none;'>
   </div>
