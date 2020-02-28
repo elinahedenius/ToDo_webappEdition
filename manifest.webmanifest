@@ -1,7 +1,7 @@
 {
   "background_color": "#ffffff",
   "description": "A simple to do app",
-  "display": "fullscreen",
+  "display": "standalone",
   "icons": [
     {
       "src": "assets/appIcon.png",
