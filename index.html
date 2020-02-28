@@ -2,24 +2,22 @@
 <html lang="en">
 
 <html>
+
 <head>
   <title>ToDo</title>
 
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#ee6e73">
 
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link rel='stylesheet' type='text/css' href='css/index.css'>
-  <script
-			  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-			  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
-			  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
   <link rel='manifest' href='manifest.webmanifest'>
 </head>
 
@@ -51,37 +49,68 @@
       <i class="large material-icons">mode_edit</i>
     </a>
     <ul>
-      <li><a class="btn-floating red modal-trigger" href='#newList'><i class="material-icons">playlist_add</i></a></li>
-      <li><a class="btn-floating modal-trigger" href="#newTask"><i class="material-icons">check_box</i></a></li>
+      <li><a class="btn-floating red" id='newList' onclick='showPopup(this)'><i class="material-icons">playlist_add</i></a></li>
+      <li><a class="btn-floating modal-trigger" id='newTask' onclick='showPopup(this)'><i class="material-icons">check_box</i></a></li>
     </ul>
   </div>
 
-  <ul id='addOptions' style='display: none;'>
-    <li><a class="waves-effect waves-light btn modal-trigger" href="#newTask">task</a></li>
-    <li><a class="waves-effect waves-light btn modal-trigger" href="#newList">list</a></li>
-  </ul>
+  <div id='newListPopup' class='popup scale-transition scale-in' style='display: none;'>
+    <div class='popupContent'>
+      <h4>New list</h4>
+      <form class='col s12'>
+        <div class="input-field col s6">
+          <input placeholder="Name" id="newTaskName" type="text" class="validate">
+        </div>
+        <div class='row'>
+          <div class="input-field col s6">
+            <input placeholder='Date' type="text" class="datepicker">
+          </div>
+          <div class="input-field col s6">
+            <input type="text" placeholder='Time' class="timepicker">
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <select>
+            <option value="" disabled selected>Choose a list</option>
+            <option value="1">Default</option>
+          </select>
+        </div>
+      </form>
+      <footer>
+        <a class='btn' onclick='save(newListPopup)'>Save</a>
+        <a class='btn' onclick='cancel(newListPopup)'>Cancel</a>
+      </footer>
+    </div>
+  </div>
 
-
-  <!-- Modal Structure -->
-<div id="newTask" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4>New Task</h4>
-    <p>A bunch of text</p>
+  <div id='newTaskPopup' class='popup' style='display: none;'>
+    <div class='popupContent'>
+      <h4>New task</h4>
+      <form class='col s12'>
+        <div class="input-field col s6">
+          <input placeholder="Name" id="newTaskName" type="text" class="validate">
+        </div>
+        <div class='row'>
+          <div class="input-field col s6">
+            <input placeholder='Date' type="text" class="datepicker">
+          </div>
+          <div class="input-field col s6">
+            <input placeholder='Time' type="text" class="timepicker">
+          </div>
+        </div>
+        <div class="input-field col s12">
+          <select>
+            <option value="" disabled selected>Choose a list</option>
+            <option value="1">Default</option>
+          </select>
+        </div>
+      </form>
+      <footer>
+        <a class='btn' onclick='save(newTaskPopup)'>Save</a>
+        <a class='btn' onclick='cancel(newTaskPopup)'>Cancel</a>
+      </footer>
+    </div>
   </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>
-
-<div id="newList" class="modal modal-fixed-footer">
-  <div class="modal-content">
-    <h4>New List</h4>
-    <p>A bunch of text</p>
-  </div>
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-  </div>
-</div>
 
   <div id='todayView' class='view' style='display:none;'>
   </div>
@@ -95,4 +124,5 @@
   <script src='js/ui.js'></script>
   <script src='js/app.js'></script>
 </body>
+
 </html>

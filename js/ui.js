@@ -1,5 +1,6 @@
 
 var fabToggled = false;
+var popupShowing = false;
 
 document.addEventListener('DOMContentLoaded', function() {
   var elems = document.querySelectorAll('.sidenav');
@@ -48,17 +49,31 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-//Action button
-//function toggleAddOptions(){
-//  var addOptions = document.getElementById('addOptions');
-//  if (addOptionsLoaded){
-//    addOptions.style.display ='none';
-//    document.getElementById('fab').style.transform = 'rotate(0deg)';
-//    addOptionsLoaded = false;
-//  }
-//  else {
-//    addOptions.style.display = 'flex';
-//    document.getElementById('fab').style.transform = 'rotate(45deg)';
-//    addOptionsLoaded = true;
-//  }
-//}
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.datepicker');
+  var instances = M.Datepicker.init(elems);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.timepicker');
+  var instances = M.Timepicker.init(elems);
+});
+
+function showPopup(e){
+  document.getElementById(e.getAttribute('id') + 'Popup').style.display = 'flex';
+  popupShowing = true;
+  return;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('select');
+  var instances = M.FormSelect.init(elems);
+});
+
+function save(e){
+  e.style.display = 'none';
+}
+
+function cancel(e){
+  e.style.display = 'none';
+}
