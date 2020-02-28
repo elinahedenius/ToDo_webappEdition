@@ -1,0 +1,15 @@
+{
+  "background_color": "#ffffff",
+  "description": "A simple to do app",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "assets/appIcon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "ToDo Webapp Edition",
+  "short_name": "ToDo",
+  "start_url": "/home/bo/repos/ToDo/ToDo_webappEdition/index.html"
+}
