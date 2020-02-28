@@ -1,5 +1,6 @@
 {
   "background_color": "#ee6e73",
+  "theme_color": "#ee6e73",
   "description": "A simple to do app",
   "display": "standalone",
   "icons": [
